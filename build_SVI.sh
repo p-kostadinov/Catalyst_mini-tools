@@ -95,7 +95,6 @@ svi() {
     echo "no ip redirects"
     echo "ip address $hostIP/${NetworkMASK[$1]}"
     echo "no ipv6 redirects"
-    echo "ip router eigrp 2755"
     echo "hsrp version 2"
     echo "hsrp ${VLAN[$1]}"
     echo "preempt delay minimum 2"
