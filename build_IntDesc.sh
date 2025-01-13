@@ -21,27 +21,27 @@ if [ -z "$1" ];then
     echo "Pass arguments 'file.csv' "
     space
     for i in {1..2}; do
-        echo "interface,vlan,AP,SN,HW"
-        echo "interface,vlan,AP,SN,HW"
+        echo "interface,vlan,NAME,SN,HW"
+        echo "interface,vlan,NAME,SN,HW"
     done
     space
     echo "Or pass following argument order for one Interface"
     space
-    echo "interface vlan AP SN HW"
+    echo "interface vlan NAME SN HW"
     padding
     exit 1
 fi
 
 fileArray[1]="interface"
 fileArray[2]="vlan"
-fileArray[3]="AP"
+fileArray[3]="NAME"
 fileArray[4]="SN"
 fileArray[5]="HW"
 
 if [ ! -f "$1" ];then
     Counter="0"
     interface[0]=$1
-    AP[0]=$2
+    NAME[0]=$2
     SN[0]=$3
     HW[0]=$4
 else
@@ -56,7 +56,7 @@ fi
 
 InterfaceConf() {
     echo "interface ${interface[$i]}"
-    echo "description AP=${AP[$i]} SN=${SN[$i]} HW=${HW[$i]}"
+    echo "description NAME=${NAME[$i]} SN=${SN[$i]} HW=${HW[$i]}"
 }
 
 padding
