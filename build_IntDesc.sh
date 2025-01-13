@@ -20,27 +20,25 @@ if [ -z "$1" ];then
     padding
     echo "Pass arguments 'file.csv' "
     space
-    for i in {1..2}; do
-        echo "interface,vlan,DESC"
-        echo "interface,vlan,DESC"
+    for i in {1..3}; do
+        echo "Ethx/x,Description"
+        echo "Ethx/x,Description"
     done
     space
     echo "Or pass following argument order for one Interface"
     space
-    echo "interface vlan DESC"
+    echo "Ethx/x Description"
     padding
     exit 1
 fi
 
 fileArray[1]="interface"
-fileArray[2]="vlan"
-fileArray[3]="DESC"
+fileArray[2]="DESC"
 
 if [ ! -f "$1" ];then
     Counter="0"
     interface[0]=$1
-    vlan[0]=$2
-    DESC[0]=$3
+    DESC[0]=$2
 else
     for i in $(seq 1 ${#fileArray[@]} ); do
         awk -F',' -v var="$i" '{print $var}' "$1" > ./"${fileArray[$i]}".txt
