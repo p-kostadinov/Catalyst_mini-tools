@@ -63,8 +63,6 @@ InterfaceConf() {
     echo "ip dhcp snooping limit rate 30"
     echo "no snmp trap link-status"
     echo "no logging event link-status"
-    echo "service-policy input L2-Access-Trust-In"
-    echo "service-policy output L2-Access-Out"
     echo "no shutdown"
     space
     smallPad
